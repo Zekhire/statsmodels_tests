@@ -13,9 +13,10 @@ t = [x*dt for x in range(len(data))]                            # <- stworz wekt
 
 # w kazdej iteracji doloz kolejna probke procesu, zeby wyznaczyc model
 for i in range(8, len(data)):
-    # model = AutoReg(data[:i], lags=3, old_names=False)
-    # model = ARIMA(data[:i], order=(2, 0, 1))
-    model = ARIMA(data[:i], order=(2, 1, 1))                    # <- wyznacz model bazujac na i pierwszych probkach procesu
+    # do wyboru:
+    # model = AutoReg(data[:i], lags=3, old_names=False)        #
+    # model = ARIMA(data[:i], order=(2, 0, 1))                  # <- wyznacz model bazujac na i pierwszych probkach procesu
+    model = ARIMA(data[:i], order=(2, 1, 1))                    #
     model_fit = model.fit()
     yhat = model_fit.predict(1, len(data))
     shift = 1
