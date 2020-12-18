@@ -1,5 +1,8 @@
 # statsmodels_tests
 
+### Description
+Tests of statsmodels library capability of prediction future samples of process.
+
 ### Setup
 ```
 python -m virtualenv venv
